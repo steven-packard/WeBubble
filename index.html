@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>🫧 WeBubble</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script"/>
+    
+    <h1 class="heading">
+      WeBubble
+    </h1>
+
+    <p class="descr">
+      Write a message to the web!
+    </p>
+    
+    <input id="messageInput" class="textbox" type="text" placeholder="Your text here:" maxlength="100">
+    <p id="charCount" class="char-counter">0 / 100 Characters</p>
+
+    <div class="button-container">
+        <button class="submit" onclick="submitMessage()"">
+            SUBMIT
+          </button>
+    </div>
+    
+    <div class="box-of-messages" id="messages">
+    </div>
+    
+
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io();
+
+        // Character counter
+        function updateCharCount() {
+            const messageInput = document.getElementById('messageInput');
+            const currentLength = messageInput.value.length;
+            document.getElementById('charCount').innerText = `${currentLength} / 100`;
+        }
+
+        // Event listener for the input box to update the character counter
+        document.getElementById('messageInput').addEventListener('input', updateCharCount);
+
+
+        document.getElementById('messageInput').addEventListener('input', function() {
+            const currentLength = this.value.length;
+            document.getElementById('charCount').innerText = `${currentLength} / 100 Characters`;
+        });
+    
+        // Function to shuffle an array (the messages)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+    
+        // Function to emit a new message to the server
+        function submitMessage() {
+            const messageInput = document.getElementById('messageInput');
+            socket.emit('new message', messageInput.value);
+            messageInput.value = '';
+        }
+    
+        // Listen for messages from the server to display
+        socket.on('display messages', function(messages) {
+            shuffleArray(messages); // Shuffle the messages
+
+            const messagesContainer = document.getElementById('messages');
+            messagesContainer.innerHTML = ''; // Clear the current messages
+
+            messages.forEach(function(message, index) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.textContent = message.text;
+                // Assign a random animation delay between 0 and 5 seconds
+                const randomDelay = Math.random() * 5;
+                messageDiv.style.animationDelay = `${randomDelay}s`;
+                messagesContainer.appendChild(messageDiv);
+            });
+        });
+    </script>
+    
+
+  </body>
+</html>

@@ -1,0 +1,118 @@
+.heading{
+    text-align: center;
+    color: #3D5A80; /* Deep ocean blue */
+    font-family: "Nanum Pen Script", sans-serif;
+    font-size: 800%;
+    text-shadow: 2px 2px #E0FBFC; /* Soft white for shadow */
+    margin-bottom: 0;
+    margin-top: 15px;
+    padding-bottom: 0px;
+    height: 100px;
+}
+  
+.descr{
+    text-align: center;
+    color: #5C7E96; /* Light ocean blue, slightly darker for better readability */
+    font-family: "Nanum Pen Script", serif;
+    font-size: 250%;
+    text-shadow: 2px 2px #E0FBFC; /* Soft white for shadow */
+    margin-top: 0;
+}
+  
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-image: url("SandWater.jpg"); /* Ensure this image has a soft beachy palette */
+}
+
+.textbox{
+    background-color: rgba(224, 251, 252, 0.9); /* Soft white background with opacity */
+    color: #2C3E50; /* Dark blue that is strong and easy to read */
+    margin: auto;
+    display: block;
+    width: 50%;
+    padding: 2.5%;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    border: 1px solid #3D5A80; /* Subtle border color */
+}
+
+.char-counter{
+    text-align: center;
+    color: #3D5A80; /* Deep ocean blue for better visibility */
+    font-family: "Nanum Pen Script", serif;
+    font-size: 200%;
+    margin-top: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.submit{
+    height: 50px;
+    width: 200px;
+    font-weight: bold;
+    background-color: #3D5A80; /* Deep ocean blue */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #E0FBFC; /* Soft white for text */
+    border: none;
+    border-radius: 10px;
+    margin-top: 0px;
+}
+
+.submit:hover{
+    cursor: pointer;
+    background-color: #293241; /* Darker shade for hover effect, ensuring good contrast */
+}
+
+.submit:active{
+    opacity: 0.8;
+}
+
+.box-of-messages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 95%;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0); /* Transparent background to let the beach image show through */
+}
+
+.message {
+    min-width: 100px;
+    max-width: 250px;
+    padding: 15px;
+    background-color: #E0FBFC; /* Soft white */
+    border-radius: 50px; /* Makes it more rounder */
+    border: 1px solid #FFD460; /* Sand color border */
+    text-align: center;
+    color: #2C3E50; /* Dark blue for text */
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    display: inline-block; /* Changed to inline-block for animation */
+    height: auto; /* Height adjusts to content */
+    overflow: hidden; /* Ensures content doesn't spill outside */
+    animation: floatBubble 6s ease-in-out infinite; /* Apply the animation */
+}
+
+.message:empty {
+    padding: 50px; /* Ensures empty bubbles are circular */
+}
+
+@keyframes floatBubble {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}

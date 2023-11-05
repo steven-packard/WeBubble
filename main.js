@@ -57,8 +57,8 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', async (socket) => {
-    // Send the 9 most recent messages to the client immediately after connection
-    const messages = await Message.find().sort({ createdAt: -1 }).limit(9);
+    // Send the 25 most recent messages to the client immediately after connection
+    const messages = await Message.find().sort({ createdAt: -1 }).limit(25);
     socket.emit('display messages', messages.reverse());
 
     // When a new message is received
@@ -71,7 +71,7 @@ io.on('connection', async (socket) => {
             // Save the message to the database
             await message.save();
             // Fetch the 9 most recent messages
-            const messages = await Message.find().sort({ createdAt: -1 }).limit(9);
+            const messages = await Message.find().sort({ createdAt: -1 }).limit(25);
             // Emit the messages to the client to display
             io.emit('display messages', messages.reverse());
         }

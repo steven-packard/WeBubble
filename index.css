@@ -1,49 +1,61 @@
-.heading{
+.heading-container{
+    background-color: #dfcfa3;
+    border-radius: 20px;
+    padding: 20px;
+    width: calc(100% - 40px);
+    max-width: 700px;
+    box-sizing: border-box;
+    margin: 20px auto;
     text-align: center;
-    color: #3D5A80; /* Deep ocean blue */
-    font-family: "Nanum Pen Script", sans-serif;
-    font-size: 800%;
-    text-shadow: 2px 2px #E0FBFC; /* Soft white for shadow */
-    margin-bottom: 0;
-    margin-top: 15px;
-    padding-bottom: 0px;
-    height: 100px;
 }
-  
+
+.heading{
+    color: #3D5A80;
+    font-family: "Nanum Pen Script", sans-serif;
+    font-size: 7em;
+    text-shadow: 2px 2px #E0FBFC;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    display: inline-block;
+    line-height: 1;
+}
+
 .descr{
-    text-align: center;
-    color: #5C7E96; /* Light ocean blue, slightly darker for better readability */
+    color: #5C7E96;
     font-family: "Nanum Pen Script", serif;
-    font-size: 250%;
-    text-shadow: 2px 2px #E0FBFC; /* Soft white for shadow */
-    margin-top: 0;
+    font-size: 2em;
+    text-shadow: 2px 2px #E0FBFC;
+    height: 40px;
+    margin: 0;
+    padding: 0;
 }
   
 body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    background-image: url("SandWater.jpg"); /* Ensure this image has a soft beachy palette */
+    background-image: url("SandWater.jpg");
 }
 
 .textbox{
-    background-color: rgba(224, 251, 252, 0.9); /* Soft white background with opacity */
-    color: #2C3E50; /* Dark blue that is strong and easy to read */
+    background-color: rgba(224, 251, 252, 0.9);
+    color: #2C3E50;
     margin: auto;
     display: block;
     width: 50%;
-    padding: 2.5%;
+    padding: 1.5%;
     border-radius: 25px;
     font-size: 18px;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 10px;
-    border: 1px solid #3D5A80; /* Subtle border color */
+    border: 1px solid #3D5A80;
 }
 
 .char-counter{
     text-align: center;
-    color: #3D5A80; /* Deep ocean blue for better visibility */
+    color: #3D5A80;
     font-family: "Nanum Pen Script", serif;
     font-size: 200%;
     margin-top: 0;
@@ -61,10 +73,10 @@ body {
     height: 50px;
     width: 200px;
     font-weight: bold;
-    background-color: #3D5A80; /* Deep ocean blue */
+    background-color: #3D5A80;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    color: #E0FBFC; /* Soft white for text */
+    color: #E0FBFC;
     border: none;
     border-radius: 10px;
     margin-top: 0px;
@@ -72,7 +84,7 @@ body {
 
 .submit:hover{
     cursor: pointer;
-    background-color: #293241; /* Darker shade for hover effect, ensuring good contrast */
+    background-color: #293241;
 }
 
 .submit:active{
@@ -95,22 +107,22 @@ body {
     min-width: 100px;
     max-width: 250px;
     padding: 15px;
-    background-color: #E0FBFC; /* Soft white */
-    border-radius: 50px; /* Makes it more rounder */
-    border: 1px solid #FFD460; /* Sand color border */
+    background-color: #E0FBFC;
+    border-radius: 50px;
+    border: 1px solid #FFD460;
     text-align: center;
-    color: #2C3E50; /* Dark blue for text */
+    color: #2C3E50;
     font-family: 'Montserrat', sans-serif;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     word-wrap: break-word;
-    display: inline-block; /* Changed to inline-block for animation */
-    height: auto; /* Height adjusts to content */
-    overflow: hidden; /* Ensures content doesn't spill outside */
-    animation: floatBubble 6s ease-in-out infinite; /* Apply the animation */
+    display: inline-block;
+    height: auto;
+    overflow: hidden;
+    animation: floatBubble 6s ease-in-out infinite;
 }
 
 .message:empty {
-    padding: 50px; /* Ensures empty bubbles are circular */
+    padding: 50px;
 }
 
 @keyframes floatBubble {

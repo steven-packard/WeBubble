@@ -1,4 +1,4 @@
-require('dotenv').config();  // Add this line at the top of your file
+require('dotenv').config(); // Add this line at the top of your file
 
 const express = require('express');
 const http = require('http');
@@ -6,10 +6,35 @@ const socketIo = require('socket.io');
 const Filter = require('./Filter/badwords');
 const mongoose = require('mongoose');
 const { words: lang } = require('./Filter/lang.json');
+const cors = require('cors'); // Import CORS
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+
+// CORS configuration for your Express app
+const corsOptions = {
+    origin: "*", // Allow all origins
+    methods: ["GET", "POST"],
+    credentials: true,
+};
+app.use(cors(corsOptions)); // Use CORS
+
+// Serve static files from the current directory
+app.use(express.static('.'));
+
+// Serve the HTML file on the root route
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+// Socket.IO with CORS configuration
+const io = socketIo(server, {
+    cors: {
+        origin: "*", // Allow all origins
+        methods: ["GET", "POST"],
+        credentials: true,
+    },
+});
 
 // Initializing the word filter
 const filter = new Filter();

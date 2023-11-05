@@ -34,7 +34,8 @@
     <script src="/socket.io/socket.io.js"></script>
 
     <script>
-        const socket = io();
+        // Configure the Socket.IO client with credentials
+        const socket = io({ withCredentials: true });
 
         // Character counter
         function updateCharCount() {

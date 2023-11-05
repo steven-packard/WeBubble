@@ -9,8 +9,9 @@
   "author": "Steven Packard, YeJu Lee",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.17.1",
-    "socket.io": "^2.3.0",
-    "mongoose": "^5.9.7"
-  }  
+    "mongoose": "^5.9.7",
+    "socket.io": "^2.3.0"
+  }
 }

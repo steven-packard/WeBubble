@@ -1,9 +1,11 @@
+require('dotenv').config();  // Add this line at the top of your file
+
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 const Filter = require('./Filter/badwords');
 const mongoose = require('mongoose');
-const { words: lang } = require('./Filter/lang.json'); 
+const { words: lang } = require('./Filter/lang.json');
 
 const app = express();
 const server = http.createServer(app);
@@ -11,11 +13,10 @@ const io = socketIo(server);
 
 // Initializing the word filter
 const filter = new Filter();
-filter.addWords(...lang); 
-
+filter.addWords(...lang);
 
 // Connect to MongoDB
-const dbUrl = 'mongodb+srv://stevenpackard:hacknjit@cluster0.bn4ruzv.mongodb.net/message-database';
+const dbUrl = process.env.MONGODB_URI;  // Use the environment variable
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Define a schema and model for the messages

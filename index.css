@@ -109,7 +109,7 @@ body {
     padding: 15px;
     background-color: #E0FBFC;
     border-radius: 50px;
-    border: none;
+    border: 1px solid #3a5f7d;
     text-align: center;
     color: #3a5f7d;
     font-weight: 500;

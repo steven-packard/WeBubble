@@ -49,7 +49,7 @@ body {
 .textbox {
     flex-grow: 1;
     background-color: #E0FBFC;
-    color: #3D5A80;
+    color: #3a5f7d;
     padding: 10px 40px;
     border: none;
     font-size: 18px;
@@ -109,7 +109,7 @@ body {
     padding: 15px;
     background-color: #E0FBFC;
     border-radius: 50px;
-    border: none;
+    border: 1px solid #3a5f7d;
     text-align: center;
     color: #3a5f7d;
     font-weight: 500;
@@ -155,6 +155,8 @@ body {
         height: auto; 
         padding: 15px; 
         font-weight: 400;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
 
     }
     .submit {
@@ -175,6 +177,7 @@ body {
         min-width: 80px; 
         max-width: 200px; 
         padding: 10px; 
+        margin-top: 5px;
         font-size: 14px; 
     }
 }

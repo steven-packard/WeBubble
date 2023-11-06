@@ -126,6 +126,14 @@ body {
     padding: 50px;
 }
 
+.disclaimer{
+    color: white;
+    font-family: Tahoma, Verdana, sans-serif;
+    text-align: center;
+    font-size: 1em;
+    text-shadow: 1px 1px #3a5f7d
+}
+
 
 /* Mobile devices */
 @media screen and (max-width: 768px) { 

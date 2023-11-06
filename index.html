@@ -15,19 +15,16 @@
       </h1>
 
       <p class="descr">
-        Write a message to the web!
+        Cast away your thoughts!
       </p>
     </div>
     
     
-    <input id="messageInput" class="textbox" type="text" placeholder="Your text here:" maxlength="100">
-    <p id="charCount" class="char-counter">0 / 100 Characters</p>
-
-    <div class="button-container">
-        <button class="submit" onclick="submitMessage()"">
-            SUBMIT
-          </button>
+    <div class="input-container">
+      <input id="messageInput" class="textbox" type="text" placeholder="What's on your mind?" maxlength="100">
+      <button class="submit" onclick="submitMessage()">POST</button>
     </div>
+    <p id="charCount" class="char-counter">0 / 100 Characters</p>
     
     <div class="box-of-messages" id="messages">
     </div>

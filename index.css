@@ -75,11 +75,11 @@ body {
 
 .submit:hover {
     cursor: pointer;
-    background-color: #293241;
+    background-color: #274055;
 }
 
 .submit:active {
-    opacity: 0.8;
+    background-color: #374755;
 }
 
 .char-counter {

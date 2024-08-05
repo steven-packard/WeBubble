@@ -66,9 +66,10 @@
     
         // Function to emit a new message to the server
         function submitMessage() {
-            const messageInput = document.getElementById('messageInput');
-            socket.emit('new message', messageInput.value);
-            messageInput.value = '';
+            // const messageInput = document.getElementById('messageInput');
+            // socket.emit('new message', messageInput.value);
+            // messageInput.value = '';
+            // UNCOMMENT THIS TO RE-ACTIVATE THE SERVICE
         }
     
         // Listen for messages from the server to display
